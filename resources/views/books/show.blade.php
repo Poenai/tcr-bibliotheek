@@ -1,10 +1,14 @@
-{{$book->title}}
-{{$book->content}}
-{{$book->author}}
+@extends('layouts.app')
 
-<a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">edit</a>
-<form action="{{URL::asset('/books')}}" method="post">
-    @csrf
-    {{method_field('DELETE')}}
-    <input type="submit" value="delete">
-</form>
+@section('content')
+    {{$book->title}}
+    {{$book->content}}
+    {{$book->author}}
+
+    <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">edit</a>
+    <form action="{{URL::asset('/books')}}" method="post">
+        @csrf
+        {{method_field('DELETE')}}
+        <input type="submit" value="delete">
+    </form>
+@endsection
