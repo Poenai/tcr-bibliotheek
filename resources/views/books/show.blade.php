@@ -3,7 +3,7 @@
 {{$book->author}}
 
 <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">edit</a>
-<form action="{{URL::asset('/books')}}">
+<form action="{{URL::asset('/books')}}" method="post">
     @csrf
     {{method_field('DELETE')}}
     <input type="submit" value="delete">

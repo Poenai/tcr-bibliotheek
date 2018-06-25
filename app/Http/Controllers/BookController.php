@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class BookController extends Controller
 {
@@ -72,7 +73,8 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
-
+        $book->update($request->all());
+        return redirect(URL::asset('/books'). '/'.$book->id);
     }
 
     /**
@@ -83,6 +85,7 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-        //
+        $book->delete();
+        return redirect()->action('BookController@index')->with('status','boek verwijderd');
     }
 }
