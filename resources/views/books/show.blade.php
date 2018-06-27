@@ -1,3 +1,4 @@
+@extends('layouts.app')
 
 
 
@@ -11,3 +12,5 @@ schrijver:{{$book->author}}<br>
     {{method_field('DELETE')}}
     <input type="submit" value="delete">
 </form>
+@section('content')
+@endsection
