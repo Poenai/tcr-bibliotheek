@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 
+@section('content')
 
 titel:  {{$book->title}}<br>
 inhoud:{{$book->content}}<br>
@@ -12,5 +13,4 @@ schrijver:{{$book->author}}<br>
     {{method_field('DELETE')}}
     <input type="submit" value="delete">
 </form>
-@section('content')
 @endsection
