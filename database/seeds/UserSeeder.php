@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
         'name' => 'Jan Schuit',
         'email' => 'j.schuit@tcrmbo.nl',
         'password' => Hash::make('admin'),
+        'isAdmin' => true,
         ]);
         factory(App\User::class,30)->create();
     }
