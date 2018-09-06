@@ -55,7 +55,7 @@ class BookController extends Controller
         $book->save();
 
 
-        return redirect()->action('BookController@index')->with('status', 'boek toegevoegd');
+        return redirect()->action('HomeController@index')->with('status', 'boek toegevoegd');
     }
 
     /**
@@ -117,7 +117,7 @@ class BookController extends Controller
 		}
 
         $book->delete();
-        return redirect()->action('BookController@index')->with('status','boek verwijderd');
+        return redirect()->action('HomeController@index')->with('status','boek verwijderd');
     }
 
     public function upload(){
