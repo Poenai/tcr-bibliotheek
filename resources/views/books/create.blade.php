@@ -11,4 +11,10 @@
         <input type="text" id="author" name="author" placeholder="schrijver">
         <input type="submit">
     </form>
+
+    <form action="{{URL::asset('books/upload')}}" method="post">
+        {{ csrf_field() }}
+        <input type="file" name="image" id="image">
+        <input type="submit" name="upload">
+    </form>
 @endsection
