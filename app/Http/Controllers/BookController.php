@@ -112,8 +112,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
-
-        unlink(public_path() . $book->coverpath);
+		if($book->coverpath != '/bookcovers/_book-cover-placeholder.png'){
+			unlink(public_path() . $book->coverpath);
+		}
 
         $book->delete();
         return redirect()->action('BookController@index')->with('status','boek verwijderd');
