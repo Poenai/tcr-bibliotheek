@@ -13,7 +13,7 @@
             </div>
             <div class="col-12 col-md-6 row align-items-center justify-content-center">
                 <div>
-                    <h1>{{$book->title}}</h1>
+                    <h1 class="mt-4">{{$book->title}}</h1>
                     <h4>geschreven door {{$book->author}}</h4>
                 </div>
             </div>
