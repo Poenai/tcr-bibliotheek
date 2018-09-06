@@ -88,4 +88,10 @@ class BookController extends Controller
         $book->delete();
         return redirect()->action('BookController@index')->with('status','boek verwijderd');
     }
+
+    public function upload(){
+        
+
+        return redirect()->action('BookController@index')->with('status','image uploaded');
+    }
 }
