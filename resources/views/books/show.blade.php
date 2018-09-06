@@ -5,7 +5,7 @@
 
 
     <div class="container">
-        <div class="row justify-content-center mt-3 mb-3">
+        <div class="row justify-content-center mt-3 mb-5">
             <div class="col-12 col-md-6 row justify-content-center center">
                 <div class="col-6">
                     <div class="bookimage" style="background-image: url('{{$book->coverpath}}')"></div>
@@ -19,14 +19,17 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <p>{{$book->content}}</p>
+            <p style="white-space: pre-wrap">{{$book->content}}</p>
         </div>
+        @if(Auth::user()->isAdmin)
+            <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">
+                <button type="button" class="btn btn-secondary float-left mr-3">edit</button>
+            </a>
+            <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
+                @csrf
+                {{method_field('DELETE')}}
+                <input type="submit" class="btn btn-secondary float-left" value="delete">
+            </form>
+        @endif
     </div>
-
-    <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">edit</a>
-    <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
-        @csrf
-        {{method_field('DELETE')}}
-        <input type="submit" value="delete">
-    </form>
 @endsection

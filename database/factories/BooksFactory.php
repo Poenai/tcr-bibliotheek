@@ -17,7 +17,7 @@ $factory->define(App\Book::class, function (Faker $faker) {
 	return [
 		'title'     => $faker->firstName,
 		'coverpath' => '/bookcovers/_book-cover-placeholder.png',
-		'content'   => $faker->paragraph(5),
+		'content'   => $faker->paragraphs(5,true),
 		'author'    => $faker->firstName . ' ' . $faker->lastName,
 	];
 });
