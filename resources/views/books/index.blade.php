@@ -1,4 +1,4 @@
-@extends('layouts.masterlayout')
+@extends('layouts.app')
 @section('title','TCR-bibliotheek')
 @section('content')
 <a href="{{URL::asset('/books/create')}}">boek toevoegen</a>

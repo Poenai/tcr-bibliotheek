@@ -2,7 +2,7 @@
 
 @section('content')
     <form action="{{URL::asset('books')}}" method="post">
-        @csrf
+        {{ csrf_field() }}
         <label for="title">titel:</label>
         <input type="text" id="title" name="title" placeholder="titel">
         <label for="content">inhoud:</label>
