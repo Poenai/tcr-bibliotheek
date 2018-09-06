@@ -89,6 +89,17 @@ class BookController extends Controller
      */
     public function update(Request $request, Book $book)
     {
+        if($request->image != null){
+            if($book->coverpath != "/bookcovers/_book-cover-placeholder.png"){
+                unlink(public_path() . $book->coverpath);
+            }
+            $fileExtension = $request->file('image')->getClientOriginalExtension();
+            $uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
+            $request->file('image')->move(public_path('bookcovers'),$uniqueFileName);
+            $book->coverpath = '/bookcovers/' . $uniqueFileName;
+        }
+
+
         $book->update($request->all());
         return redirect(URL::asset('/books'). '/'.$book->id);
     }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{URL::asset('/books'). '/'.$book->id }}" method="post">
+    <form action="{{URL::asset('/books'). '/'.$book->id }}" method="post" enctype="multipart/form-data">
         @csrf
         {{method_field('PATCH')}}
 
