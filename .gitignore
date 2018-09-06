@@ -12,4 +12,4 @@ yarn-error.log
 .env
 .DS_Store
 public/bookcovers/*
-!public/bookcovers/_book-cover-placeholder
+!public/bookcovers/_book-cover-placeholder.png
