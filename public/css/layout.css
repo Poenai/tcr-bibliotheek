@@ -5,3 +5,10 @@ table {
 table, th, td {
     border: 1px solid black;
 }
+
+.bookimage {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-top: calc((8 / 5) * 100%); /* aspect ratio for most books */
+}
