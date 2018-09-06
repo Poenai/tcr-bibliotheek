@@ -101,6 +101,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+
+        unlink($book->coverpath);
+
         $book->delete();
         return redirect()->action('BookController@index')->with('status','boek verwijderd');
     }
