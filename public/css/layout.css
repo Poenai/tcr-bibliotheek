@@ -12,3 +12,7 @@ table, th, td {
     background-repeat: no-repeat;
     padding-top: calc((8 / 5) * 100%); /* aspect ratio for most books */
 }
+.bookcover{
+    max-height: 60%;
+    max-width: 45%;
+}

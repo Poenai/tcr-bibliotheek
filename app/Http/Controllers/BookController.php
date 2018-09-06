@@ -121,6 +121,6 @@ class BookController extends Controller
 
     public function upload(){
 
-
+    echo('nee...');
     }
 }

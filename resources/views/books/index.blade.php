@@ -13,7 +13,7 @@
     </thead>
 @foreach($books as $book)
     <tr>
-        <td><img src="{{$book->coverpath}}"></td>
+        <td><img class="bookcover" src="{{$book->coverpath}}"></td>
         <td>{{$book->title}}</td>
         <td>{{$book->author}}</td>
         <td><a href="{{URL::asset('/books'). '/'.$book->id}}">meer</a></td>
