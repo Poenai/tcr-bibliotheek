@@ -4,6 +4,9 @@
     <form action="{{URL::asset('/books'). '/'.$book->id }}" method="post">
         @csrf
         {{method_field('PATCH')}}
+
+            <input type="file" name="image" id="image">
+
         <label for="title">titel:</label>
         <input type="text" id="title" name="title" value="{{$book->title}}">
         <label for="content">inhoud:</label>

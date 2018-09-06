@@ -38,7 +38,23 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        Book::create($request->all());
+        $book = new Book;
+        if ($request->image != null){
+
+            $fileExtension = $request->file('image')->getClientOriginalExtension();
+            $uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
+            $request->file('image')->move(public_path('bookcovers'),$uniqueFileName);
+            $book->coverpath = '/bookcovers/' . $uniqueFileName;
+
+        }else {
+            $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
+        }
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->content = $request->content;
+        $book->save();
+
+
         return redirect()->action('BookController@index')->with('status', 'boek toegevoegd');
     }
 
@@ -90,8 +106,7 @@ class BookController extends Controller
     }
 
     public function upload(){
-        
 
-        return redirect()->action('BookController@index')->with('status','image uploaded');
+
     }
 }

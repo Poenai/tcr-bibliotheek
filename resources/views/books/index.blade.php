@@ -5,6 +5,7 @@
 <table>
     <thead>
     <tr>
+        <th>cover</th>
         <th>titel</th>
         <th>schrijver</th>
         <th>meer</th>
@@ -12,6 +13,7 @@
     </thead>
 @foreach($books as $book)
     <tr>
+        <td><img src="{{$book->coverpath}}"></td>
         <td>{{$book->title}}</td>
         <td>{{$book->author}}</td>
         <td><a href="{{URL::asset('/books'). '/'.$book->id}}">meer</a></td>
