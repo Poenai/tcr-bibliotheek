@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('title','TCR-bibliotheek')
 @section('content')
+@if(Auth::user()->isAdmin == true)
 <a href="{{URL::asset('/books/create')}}">boek toevoegen</a>
+@endif
 <table>
     <thead>
     <tr>
