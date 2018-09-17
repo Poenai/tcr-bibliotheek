@@ -16,6 +16,11 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::all();
+        foreach ($books as $book){
+            if ($book->coverpath == null){
+                $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
+            }
+        }
         return view('books.index', compact('books'));
     }
 
@@ -66,6 +71,9 @@ class BookController extends Controller
      */
     public function show(Book $book)
     {
+        if ($book->coverpath == null){
+            $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
+        }
         return view('books.show', compact('book'));
     }
 
