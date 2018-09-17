@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('coverpath');
             $table->longText('content');
             $table->string('author');
-            $table->string('isbn');
+            $table->string('isbn')->default('0');
             $table->timestamps();
         });
     }
