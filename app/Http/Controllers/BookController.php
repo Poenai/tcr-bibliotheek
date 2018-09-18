@@ -8,128 +8,128 @@ use Illuminate\Support\Facades\URL;
 
 class BookController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $books = Book::all();
-        foreach ($books as $book){
-            if ($book->coverpath == null){
-                $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
-            }
-        }
-        return view('books.index', compact('books'));
-    }
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function index()
+	{
+		return redirect('/');
+	}
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('books.create');
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function create()
+	{
+		return view('books.create');
 
-    }
+	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $book = new Book;
-        if ($request->image != null){
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function store(Request $request)
+	{
+		$book = new Book;
+		if ($request->image != null) {
 
-            $fileExtension = $request->file('image')->getClientOriginalExtension();
-            $uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
-            $request->file('image')->move(public_path('bookcovers'),$uniqueFileName);
-            $book->coverpath = '/bookcovers/' . $uniqueFileName;
+			$fileExtension  = $request->file('image')->getClientOriginalExtension();
+			$uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
+			$request->file('image')->move(public_path('bookcovers'), $uniqueFileName);
+			$book->coverpath = '/bookcovers/' . $uniqueFileName;
 
-        }else {
-            $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
-        }
-        $book->title = $request->title;
-        $book->author = $request->author;
-        $book->content = $request->content;
-        $book->save();
+		}else {
+			$book->coverpath = '/bookcovers/_book-cover-placeholder.png';
+		}
+		$book->title   = $request->title;
+		$book->author  = $request->author;
+		$book->content = $request->content;
+		$book->save();
 
 
-        return redirect()->action('HomeController@index')->with('status', 'boek toegevoegd');
-    }
+		return redirect()->action('HomeController@index')->with('status', 'boek toegevoegd');
+	}
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Book $book)
-    {
-        if ($book->coverpath == null){
-            $book->coverpath = '/bookcovers/_book-cover-placeholder.png';
-        }
-        return view('books.show', compact('book'));
-    }
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  \App\Book $book
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function show(Book $book)
+	{
+		if ($book->coverpath == null) {
+			$book->coverpath = '/bookcovers/_book-cover-placeholder.png';
+		}
+		return view('books.show', compact('book'));
+	}
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Book $book)
-    {
-        return view('books.update',compact('book'));
-    }
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  \App\Book $book
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function edit(Book $book)
+	{
+		return view('books.update', compact('book'));
+	}
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Book $book)
-    {
-        if($request->image != null){
-            if($book->coverpath != "/bookcovers/_book-cover-placeholder.png"){
-                unlink(public_path() . $book->coverpath);
-            }
-            $fileExtension = $request->file('image')->getClientOriginalExtension();
-            $uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
-            $request->file('image')->move(public_path('bookcovers'),$uniqueFileName);
-            $book->coverpath = '/bookcovers/' . $uniqueFileName;
-        }
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  \Illuminate\Http\Request $request
+	 * @param  \App\Book                $book
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function update(Request $request, Book $book)
+	{
+		if ($request->image != null) {
+			if ($book->coverpath != "/bookcovers/_book-cover-placeholder.png") {
+				unlink(public_path() . $book->coverpath);
+			}
+			$fileExtension  = $request->file('image')->getClientOriginalExtension();
+			$uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
+			$request->file('image')->move(public_path('bookcovers'), $uniqueFileName);
+			$book->coverpath = '/bookcovers/' . $uniqueFileName;
+		}
 
 
-        $book->update($request->all());
-        return redirect(URL::asset('/books'). '/'.$book->id);
-    }
+		$book->update($request->all());
+		return redirect(URL::asset('/books') . '/' . $book->id);
+	}
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Book  $book
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Book $book)
-    {
-		if($book->coverpath != '/bookcovers/_book-cover-placeholder.png'){
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  \App\Book $book
+	 *
+	 * @return \Illuminate\Http\Response
+	 */
+	public function destroy(Book $book)
+	{
+		if ($book->coverpath != '/bookcovers/_book-cover-placeholder.png') {
 			unlink(public_path() . $book->coverpath);
 		}
 
-        $book->delete();
-        return redirect()->action('HomeController@index')->with('status','boek verwijderd');
-    }
+		$book->delete();
+		return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
+	}
 
-    public function upload(){
+	public function upload()
+	{
 
-    echo('nee...');
-    }
+		echo('nee...');
+	}
 }
