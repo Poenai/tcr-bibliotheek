@@ -7,10 +7,25 @@
                 <div class="col-12 col-md-6 col-xl-4">
                     <a href="/books/{{$book->id}}">
                         <div class="card mb-5 mr-2 ml-2">
+							<?php
+							if ($book->coverpath) {
+								$cover = $book->coverpath;
+							}else {
+								$cover = '/bookcovers/_book-cover-placeholder.png';
+							}
+							?>
                             <div class="bookimage"
-                                 style="background-image: url('{{$book->coverpath}}')"></div>
+                                 style="background-image: url('{{$cover}}')"></div>
                             <div class="card-footer text-muted">
-                                <h3 class="text-center">{{$book->title}}</h3>
+                                <?php
+
+                                if ($book->title){
+	                                $title = $book->title;
+                                }else{
+                                	$title = 'untitled book';
+                                }
+                                ?>
+                                <h3 class="text-center">{{$title}}</h3>
                             </div>
                         </div>
                     </a>
