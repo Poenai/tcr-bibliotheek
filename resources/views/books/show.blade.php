@@ -8,13 +8,37 @@
         <div class="row justify-content-center mt-3 mb-5">
             <div class="col-12 col-md-6 row justify-content-center center">
                 <div class="col-6">
-                    <div class="bookimage" style="background-image: url('{{$book->coverpath}}')"></div>
+					<?php
+					if ($book->coverpath) {
+						$cover = $book->coverpath;
+					}else {
+						$cover = '/bookcovers/_book-cover-placeholder.png';
+					}
+					?>
+                    <div class="bookimage" style="background-image: url('{{$cover}}')"></div>
                 </div>
             </div>
             <div class="col-12 col-md-6 row align-items-center justify-content-center">
                 <div>
-                    <h1 class="mt-4">{{$book->title}}</h1>
-                    <h4>geschreven door {{$book->author}}</h4>
+					<?php
+
+					if ($book->title) {
+						$title = $book->title;
+					}else {
+						$title = 'untitled book';
+					}
+					?>
+
+					<?php
+
+					if ($book->author) {
+						$author = $book->author;
+					}else {
+						$author = 'unknown author';
+					}
+					?>
+                    <h1 class="mt-4">{{$title}}</h1>
+                    <h4>geschreven door {{$author}}</h4>
                 </div>
             </div>
         </div>
