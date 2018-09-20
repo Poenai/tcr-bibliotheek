@@ -40,6 +40,7 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
+
         Loan::create($request->all());
         $books = Book::all();
         $users = User::all();
@@ -55,7 +56,7 @@ class LoanController extends Controller
      */
     public function show(Loan $loan)
     {
-        //
+        return view('loans.show',compact('loan'));
     }
 
     /**
@@ -66,7 +67,7 @@ class LoanController extends Controller
      */
     public function edit(Loan $loan)
     {
-        //
+        return view('loans.update',compact('loan'));
     }
 
     /**
@@ -78,7 +79,8 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
-        //
+        $loan->create($request->all());
+        return view('loans.show');
     }
 
     /**
@@ -89,6 +91,10 @@ class LoanController extends Controller
      */
     public function destroy(Loan $loan)
     {
-        //
+        $loan->delete();
+        $books = Book::all();
+        $users = User::all();
+        $loans = Loan::all();
+        return view('loans.index',compact('loans','users', 'books'));
     }
 }
