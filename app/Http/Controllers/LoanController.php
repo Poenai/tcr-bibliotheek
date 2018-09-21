@@ -70,7 +70,9 @@ class LoanController extends Controller
      */
     public function edit(Loan $loan)
     {
-        return view('loans.update',compact('loan'));
+        $books = Book::all();
+        $users = User::all();
+        return view('loans.update',compact('loan', 'users', 'books'));
     }
 
     /**
