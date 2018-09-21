@@ -29,10 +29,9 @@ class LoanController extends Controller
      */
     public function create()
     {
-        $books = Book::all();
-        $users = User::all();
+        $book = $_GET['book_id'];
         $loans = Loan::all();
-        return view('loans.create',compact('loans','users', 'books'));
+        return view('loans.create',compact('loans','book'));
     }
 
     /**
@@ -84,8 +83,11 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
-        $loan->create($request->all());
-        return view('loans.show');
+        $loan->update($request->all());
+        $books = Book::all();
+        $users = User::all();
+        $loans = Loan::all();
+        return view('loans.index',compact('loans','users', 'books'));
     }
 
     /**

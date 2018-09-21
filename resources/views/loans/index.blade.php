@@ -7,16 +7,20 @@
                 <thead>
                 <tr>
                     <th scope="col">book id</th>
+                    <th scope="col">user id</th>
                     <th scope="col">loan date</th>
                     <th scope="col">return date</th>
+                    <th scope="col">edit</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($loans as $loan)
                     <tr>
                         <td>{{$loan->book_id}}</td>
+                        <td>{{$loan->user_id}}</td>
                         <td>{{$loan->loan_date}}</td>
                         <td>{{$loan->return_date}}</td>
+                        <td><a href="{{URL::asset('/loans'). '/'.$loan->id . '/' . 'edit'}}">edit</a></td>
                     </tr>
                 @endforeach
                 </tbody>
