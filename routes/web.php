@@ -11,3 +11,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/books/upload','BookController@upload');
     Route::resource('/loans','LoanController');
 });
+
+
+// temp test pages
+Route::View('/userpage', 'usersPage.userPage');
