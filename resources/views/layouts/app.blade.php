@@ -41,6 +41,11 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
+                <form action="{{URL::asset('books'). "/search"}}" method="post">
+                    {{csrf_field()}}
+                    <input type="text" name="search" placeholder="boek titel">
+                    <input type="submit" name="submit">
+                </form>
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest

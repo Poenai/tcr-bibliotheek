@@ -9,5 +9,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'HomeController@index')->name('home');
     Route::resource('/books','BookController');
     Route::post('/books/upload','BookController@upload');
+    Route::post('/books/search','BookController@search');
     Route::resource('/loans','LoanController');
 });

@@ -25,6 +25,7 @@ class BookController extends Controller
 	 */
 	public function create()
 	{
+
 		return view('books.create');
 
 	}
@@ -127,37 +128,42 @@ class BookController extends Controller
 		return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
 	}
 
-	public function upload()
-	{
+//	public function upload()
+//	{
+//
+//    echo('nee...');
+//    }
 
-    echo('nee...');
-    }
-
-    public function search()
-    {
-        $books = Book::orderBy('name')->get();
-        return view('book.search')->with('book', $books);
-    }
-
-    public function search_results(Request $request)
-    {
-        if ($request ->ajax())
-        {
-            $books = Book::with('title')->where('name', 'LIKE', '%')
-                ->orWhereHas('title', function($q) use ($request)
-                {
-                    $q->where('name', 'LIKE', '%' . $request->results . '%');
-                })->orderBy('name', 'asc')->get();
-            if($books)
-                $results = '';
-            foreach ($books as $book)
-            {
-                $results .= '<div class="col-md-2">
-                                <div class="thumbnail" data-toggle="tooltip" data-placement="top" title="" 
-                                    data-original-title="' . $book->name . '"><a href"'.route('book.show', ['id' => $book->id]).'"><img src="' . url($book->poster) . '"alt="' . $book->name . '"
-                                    style="width:100%"/></a></div></div>';
-            }
-            return Response($results);
-        }
+//    public function search()
+//    {
+//        $books = Book::orderBy('name')->get();
+//        return view('book.search')->with('book', $books);
+//    }
+//
+//    public function search_results(Request $request)
+//    {
+//        if ($request ->ajax())
+//        {
+//            $books = Book::with('title')->where('name', 'LIKE', '%')
+//                ->orWhereHas('title', function($q) use ($request)
+//                {
+//                    $q->where('name', 'LIKE', '%' . $request->results . '%');
+//                })->orderBy('name', 'asc')->get();
+//            if($books)
+//                $results = '';
+//            foreach ($books as $book)
+//            {
+//                $results .= '<div class="col-md-2">
+//                                <div class="thumbnail" data-toggle="tooltip" data-placement="top" title=""
+//                                    data-original-title="' . $book->name . '"><a href"'.route('book.show', ['id' => $book->id]).'"><img src="' . url($book->poster) . '"alt="' . $book->name . '"
+//                                    style="width:100%"/></a></div></div>';
+//            }
+//            return Response($results);
+//        }
+//    }
+    public function search(){
+	    $books = Book::where('title', 'LIKE', '%' . $_POST['search'] . '%')
+            ->get();
+	    return view('home',compact('books'));
     }
 }
