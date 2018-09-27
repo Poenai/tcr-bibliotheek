@@ -26,25 +26,25 @@
 </table>
 @endsection
 
-@section('scripts')
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $("#search").trigger('keyup');
-        });
-        $('#search').on('keyup', function () {
-            $value = $(this).val();
-            $.ajax({
-                type : 'get',
-                url : '{{ URL::to('/search-results') }}',
-                data : {'results': $value},
-                success: function (data) {
-                    if (data) {
-                        $('.bs-component').html(data);
-                    } else {
-                        $('.bs-component').html('<div class="col-md-10 col-md-offset-1">There are no book titles matching your search criteria.</div');
-                    }
-                }
-            });
-        });
-    </script>
-@endsection
+{{--@section('scripts')--}}
+    {{--<script type="text/javascript">--}}
+        {{--$(document).ready(function(){--}}
+            {{--$("#search").trigger('keyup');--}}
+        {{--});--}}
+        {{--$('#search').on('keyup', function () {--}}
+            {{--$value = $(this).val();--}}
+            {{--$.ajax({--}}
+                {{--type : 'get',--}}
+                {{--url : '{{ URL::to('/search-results') }}',--}}
+                {{--data : {'results': $value},--}}
+                {{--success: function (data) {--}}
+                    {{--if (data) {--}}
+                        {{--$('.bs-component').html(data);--}}
+                    {{--} else {--}}
+                        {{--$('.bs-component').html('<div class="col-md-10 col-md-offset-1">There are no book titles matching your search criteria.</div');--}}
+                    {{--}--}}
+                {{--}--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
+{{--@endsection--}}

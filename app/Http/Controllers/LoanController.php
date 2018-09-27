@@ -104,4 +104,20 @@ class LoanController extends Controller
         $loans = Loan::all();
         return view('loans.index',compact('loans','users', 'books'));
     }
+    public function search()
+    {
+        $loans = Loan::all();
+        $usersWithLoans = [];
+        $users = User::where('name', 'LIKE', '%' . $_GET['Search'] . '%')
+            ->get();
+        $books = Book::where('title', 'LIKE', '%' . $_GET['Search'] . '%')
+            ->get();
+        foreach ($loans as $loan) {
+            $usersWithLoans += $loan->user_id;
+            foreach ($users as $user) {
+                if (1==1);
+            }
+        }
+        return view('loans.index', compact('user', 'books'));
+    }
 }
