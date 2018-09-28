@@ -15,4 +15,4 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 // temp test pages
-Route::View('/userpage', 'usersPage.userPage');
+Route::get('/userpage', 'UserController@index');
