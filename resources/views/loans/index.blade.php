@@ -1,5 +1,11 @@
 @extends('layouts.app')
-
+@section('search')
+    <form action="{{URL::asset('loans'). "/search"}}" method="post">
+        {{csrf_field()}}
+        <input type="text" name="search" placeholder="zoek lening">
+        <input type="submit" name="submit">
+    </form>
+@endsection
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

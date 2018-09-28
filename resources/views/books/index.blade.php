@@ -1,5 +1,12 @@
 @extends('layouts.app')
 @section('title','TCR-bibliotheek')
+@section('search')
+    <form action="{{URL::asset('books'). "/search"}}" method="post">
+        {{csrf_field()}}
+        <input type="text" name="search" placeholder="boek titel">
+        <input type="submit" name="submit">
+    </form>
+@endsection
 @section('content')
 @if(Auth::user()->isAdmin == true)
 <a href="{{URL::asset('/books/create')}}">boek toevoegen</a>

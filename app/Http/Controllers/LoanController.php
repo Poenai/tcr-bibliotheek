@@ -69,9 +69,21 @@ class LoanController extends Controller
      */
     public function edit(Loan $loan)
     {
+        $loanInfo = [];
+        $user = User::where('id','=',$loan->user_id)->get();
+        $book = Book::where('id','=',$loan->book_id)->get();
         $books = Book::all();
         $users = User::all();
-        return view('loans.update',compact('loan', 'users', 'books'));
+
+        $loanInfo[] = $loan->user_id;
+        $loanInfo[] = $loan->book_id;
+        $loanInfo[] = $loan->loan_date;
+        $loanInfo[] = $loan->return_date;
+        $loanInfo[] = $user[0]->name;
+        $loanInfo[] = $book[0]->title;
+
+
+        return view('loans.update',compact('loanInfo','loan', 'users', 'books'));
     }
 
     /**
@@ -83,10 +95,12 @@ class LoanController extends Controller
      */
     public function update(Request $request, Loan $loan)
     {
+        $loanInfo = [];
         $loan->update($request->all());
         $books = Book::all();
         $users = User::all();
         $loans = Loan::all();
+
         return view('loans.index',compact('loans','users', 'books'));
     }
 

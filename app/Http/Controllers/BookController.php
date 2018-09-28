@@ -162,8 +162,15 @@ class BookController extends Controller
 //        }
 //    }
     public function search(){
+
 	    $books = Book::where('title', 'LIKE', '%' . $_POST['search'] . '%')
+            ->orWhere('content', 'LIKE', '%' . $_POST['search'] . '%')
+            ->orWhere('isbn', 'LIKE', '%' . $_POST['search'] . '%')
+            ->orWhere('author', 'LIKE', '%' . $_POST['search'] . '%')
             ->get();
-	    return view('home',compact('books'));
+//	    $books = Book::where('title', 'LIKE', '%' . $_POST['search'] . '%')
+//            ->get();
+	   
+        return view('home',compact('books'));
     }
 }
