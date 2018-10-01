@@ -17,11 +17,11 @@ class LoanController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
-        $users = User::all();
-        $loans = Loan::all();
-
-        return view('loans.index',compact('loans','users', 'books'));
+        $loans = Loan::crossjoin('books','loans.book_id','=','books.id')
+            ->crossjoin('users','loans.user_id','=','users.id')
+            ->get();
+        
+        return view('loans.index',compact('loans'));
     }
 
     /**
