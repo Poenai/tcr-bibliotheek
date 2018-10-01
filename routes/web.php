@@ -11,6 +11,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/books/upload','BookController@upload');
     Route::post('/books/search','BookController@search');
     Route::resource('/loans','LoanController');
+    Route::post('/loans/search','LoanController@search');
+
 });
 
 

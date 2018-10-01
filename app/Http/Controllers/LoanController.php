@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Book;
 use App\Loan;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -19,6 +20,7 @@ class LoanController extends Controller
         $books = Book::all();
         $users = User::all();
         $loans = Loan::all();
+
         return view('loans.index',compact('loans','users', 'books'));
     }
 
@@ -120,18 +122,13 @@ class LoanController extends Controller
     }
     public function search()
     {
-        $loans = Loan::all();
-        $usersWithLoans = [];
-        $users = User::where('name', 'LIKE', '%' . $_GET['Search'] . '%')
+        $loans = Loan::crossjoin('books','loans.book_id','=','books.id')
+            ->crossjoin('users','loans.user_id','=','users.id')
+            ->where('users.name', 'LIKE', '%' . $_POST['search'] . '%')
+            ->orWhere('books.title', 'LIKE', '%' . $_POST['search'] . '%')
+            ->orWhere('books.isbn', 'LIKE', '%' . $_POST['search'] . '%')
             ->get();
-        $books = Book::where('title', 'LIKE', '%' . $_GET['Search'] . '%')
-            ->get();
-        foreach ($loans as $loan) {
-            $usersWithLoans += $loan->user_id;
-            foreach ($users as $user) {
-                if (1==1);
-            }
-        }
-        return view('loans.index', compact('user', 'books'));
+
+        return view('loans.index', compact( 'loans'));
     }
 }
