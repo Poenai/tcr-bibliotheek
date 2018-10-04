@@ -11,5 +11,6 @@
         <label for="email"></label>
         <input type="email" id="email" name="email">
         <input type="submit" value="Opslaan">
+    </form>
 
 @endsection
