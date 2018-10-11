@@ -19,7 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{URL::asset('css/layout.css')}}" rel="stylesheet">
+    <link href="css/layout.css?v=1" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -81,7 +81,15 @@
         </div>
     </nav>
 
-    <main class="py-4">
+    <ul class="blocks" style="position:absolute;">
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li><li></li><li></li><li></li><li></li><li></li>
+    </ul>
+
+    <main class="py-4" style="position:relative;">
         @yield('content')
     </main>
 </div>

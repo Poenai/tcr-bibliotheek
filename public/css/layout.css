@@ -12,7 +12,94 @@ table, th, td {
     background-repeat: no-repeat;
     padding-top: calc((8 / 5) * 100%); /* aspect ratio for most books */
 }
-.bookcover{
+
+.bookcover {
     max-height: 60%;
     max-width: 45%;
+}
+
+body {
+    background-color: #e9eaeb;
+}
+
+nav {
+    background-color: #1ca382 !important;
+}
+
+ul.blocks li {
+    display: block;
+}
+
+/* blocks css from educus */
+
+ul.blocks {
+    position: absolute;
+    left: 0;
+    display: none;
+    max-width: 16rem;
+    padding: 0;
+}
+
+@media only screen and (min-width: 960px) {
+    ul.blocks {
+        display: block;
+    }
+}
+
+ul.blocks li {
+    height: 1rem;
+    width: 1rem;
+    float: left;
+    background: #1ca382;
+    opacity: 0.7;
+    -webkit-animation: block--animation 4s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    -moz-animation: block--animation 4s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+    animation: block--animation 4s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}
+
+ul.blocks li:nth-child(1) {
+    -webkit-animation-delay: 0ms;
+    -moz-animation-delay: 0ms;
+    animation-delay: 0ms;
+}
+
+ul.blocks li:nth-child(n+10) {
+    background: rgba(28, 163, 130, 0);
+}
+
+ul.blocks li:nth-child(5n+3) {
+    background: rgba(28, 163, 130, 0.2);
+}
+
+ul.blocks li:nth-child(3n+8) {
+    background: rgba(28, 163, 130, 0.5);
+}
+
+ul.blocks li:nth-child(11n+9) {
+    background: #f97e75;
+}
+
+ul.blocks li:nth-child(5) {
+    background: rgba(28, 163, 130, 0.5);
+}
+
+ul.blocks li:nth-last-child(1) {
+    background: rgba(28, 163, 130, 0.2);
+    left: 25rem;
+    top: 2rem;
+    position: absolute;
+}
+
+ul.blocks li:nth-last-child(2) {
+    background: rgba(28, 163, 130, 0.2);
+    left: 3rem;
+    top: 16rem;
+    position: absolute;
+}
+
+ul.blocks li:nth-last-child(3) {
+    background: rgba(28, 163, 130, 0.2);
+    left: 2rem;
+    top: 9rem;
+    position: absolute;
 }
