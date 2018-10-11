@@ -57,6 +57,7 @@
 
                                 @if(Auth::user()->isAdmin())
                                     <a class="dropdown-item" href="/loans">Books loans</a>
+                                    <a class="dropdown-item" href="/books/create">Boek toevoegen</a>
                                     <a class="dropdown-item" href="mailto:?subject=tcr-bibliotheek-aanmelding&body=Beste , U bent uitgenodigd om deel te nemen aan de TCR bibliotheek">SendMail</a>
                                 @endif
                                 <a class="dropdown-item" href="{{ route('books.index') }}">

@@ -20,7 +20,7 @@ class LoanController extends Controller
         $loans = Loan::crossjoin('books','loans.book_id','=','books.id')
             ->crossjoin('users','loans.user_id','=','users.id')
             ->get();
-        
+
         return view('loans.index',compact('loans'));
     }
 

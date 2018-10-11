@@ -25,19 +25,19 @@ class BookRealSeeder extends Seeder
 				'content'   => 'Studenten met autisme verwerken informatie anders en hebben daardoor meer behoefte aan duidelijkheid, voorspelbaarheid  en concrete aansturing dan andere studenten. Dit botst met de nadruk die het middelbaar beroepsonderwijs (mbo) legt op het vermogen tot zelfreflectie, zelfstandigheid en flexibiliteit van studenten. 
                 Dit boek is bedoeld voor begeleiders, docenten en zorgcoördinatoren in het mbo, die te maken hebben met studenten met autisme. In het voortgezet onderwijs kan het boek ingezet worden ter voorbereiding op de overstap naar het mbo. Ook voor ouders kan het boek een bron van informatie zijn over de gang van zaken én de mogelijkheden op de school.',
 				'coverpath' => '/bookcovers/autisme_in_het_middelbaarberoepsonderwijs.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789491806346',
             ], [
 				'title'     => 'Beter leerklimaat in het MBO',
 				'author'    => 'Annette Breaux en Todd Whitaker',
 				'content'   => 'Beter leerklimaat in het MBO is geschreven voor iedereen die voor de klas staat in het middelbaar beroepsonderwijs. Dit boek beoogt niet om perfecte docenten te maken; zulke docenten bestaan namelijk niet. Het helpt ook niet om perfecte studenten te vormen; want die bestaan evenmin. Deze uitgave reikt wel veertig praktische en direct toepasbare tips aan om het gedrag van studenten in het MBO te verbeteren. En het mooie is: als hun gedrag verbetert, verbeteren hun prestaties ook. Wie de tips uit dit boek ter harte neemt, zal bovendien z\'n manier van lesgeven structureel verbeteren.',
 				'coverpath' => '',
-                'isbn'      => '',
+                'isbn'      => '9789461181459',
             ], [
 				'title'     => 'betrokkenheid! De sleutel tot beter leren',
 				'author'    => 'Robert J. Marzano En Debra J. Pickering Met Tammy Heflebower',
 				'content'   => 'In dit boekje maak je kennis met die vier factoren. Deze beknopte uitgave is afgeleid van het boek Betrokkenheid!, waarin Marzano de vier factoren verder uitdiept en zestien concrete lesstrategieën geef om de betrokkenheid van de leerlingen aanzienlijk te vergroten.',
 				'coverpath' => '/bookcovers/betrokkenheid.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789461182289',
             ], [
 				'title'     => 'Coöperatief vergaderen voor professionals',
 				'author'    => 'Spencer Kagan, Dook Kopmels en Betty de Jaeger',
@@ -53,7 +53,7 @@ Ja, het kan beter, door echt samen te vergaderen, coöperatief te vergaderen:
 Dat komt omdat de praktijk niet deugt. Het klinkt mooi en het is mooi, want het kan! \'\'Maar hoe dan?\'\' Door het toepassen van de uitgangspunten van coöperatief vergaderen.
  \'\'En dat betekent dan zeker dat ik voor iedere vergadering 4 uur voorbereiding kwijt ben?\'\' Nee! Uiteraard moet u even bedenken hoe u het gaat aanpakken. Maar als u na het lezen van dit boek de diverse mogelijkheden in uw hoofd heeft, is dat iets dat al vrij snel weinig extra tijd vergt. En dan gaat het meer over minuten dan over uren. Coöperatief Vergaderen ......echt iets voor professionals.',
 				'coverpath' => '/bookcovers/cooperatief_vergaderen_voor_professionals.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789461180094',
             ], [
 				'title'     => 'Coöperatieve  Leerstrategieën Research, principes en de praktische uitwerking',
 				'author'    => 'Dr. Spencer Kagan',
@@ -68,20 +68,20 @@ Werken met coöperatieve leerstrategieën :
 Deze bewezen resultaten doen zich voor bij alle leeftijden, van peuterspeelzaal tot universiteit, op alle vakgebieden.
 Ervaar zelf hoe u met coöperatieve structuren het verschil kunt maken! Dit boekje is een beknopte weergave van Kagans uitgave coöperatieve leerstrategieën (Bazalt, 2010)',
 				'coverpath' => '/bookcovers/cooperatieve_leerstrategieen.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789461181909',
             ], [
 				'title'     => 'CreaLucion',
 				'author'    => 'Coen Free',
 				'content'   => 'Vijfhonderd jaar geleden was er in het middeleeuwse Europa een grote beroering, dankzij Jheronimus Bosch en Erasmus. Er ontpopte zich allerlei nieuwe gedachten en levensvormen waardoor een geheel nieuw mens- en wereldbeeld ontstond. In het boek CREALUCION doet Coen Free verslag van zijn boeiende zoektocht naar de heilige graal: gedroomd onderwijs dat ruimte biedt aan een optimale talentontwikkeling voor alle kinderen.',
 				'coverpath' => '/bookcovers/crealucion.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789082586107',
             ], [
 				'title'     => 'De ambachts man De mens als maker',
 				'author'    => 'Richard Sennett',
 				'content'   => 'Volgens arbeidssocioloog Richard Sennett is ambachtelijkheid meer dan louter vakmanschap. Ambachtelijkheid staat voor een blijvende, basale menselijke neiging: het verlangen om werk goed te doen omwille van het werk zelf, waardoor we vaardigheden ontwikkelen en gericht zijn op het werk in plaats van op onszelf. In dit tot nadenken stemmende boek onderzoekt een van de grootste sociologen van deze tijd het werk van de ambachtsman in heden en verleden, vergelijkt hij de diepe verbanden tussen materieel bewustzijn en ethische waarden, en ondergraaft hij algemeen aanvaarde ideeën over wat bijdraagt aan goede arbeid.
 Sennett reist in De ambachtsman door rijd en ruimte: van de klassieke Romeinse stenenmakers naar de goudsmeden van de Renaissance, van de drukpersen van de Verlichting in Parijs en de Industriële Revolutie in Londen naar de moderne wereld. De ambachtsman is een briljante cultuurgeschiedenis over onze verhouding tot ons werk.',
 				'coverpath' => '/bookcovers/de_ambachts_man.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789029091282',
             ], [
 				'title'     => 'De Creatiespiraal',
 				'author'    => 'Marinus Knoope',
@@ -89,7 +89,7 @@ Sennett reist in De ambachtsman door rijd en ruimte: van de klassieke Romeinse s
 Zoals fruitbomen over precies die kwaliteiten beschikken die ze in staat stellen de eigen fruitsoort te creëren, zo beschikken mensen over precies die kwaliteiten die ze nodig hebben om hun eigen wensen en verlangens te kunnen realiseren.
 Zoals er in de natuur een vaste route is van bloesem naar vrucht en van zaad naar oogst, zo is er in de natuur ook een welbepaalde weg van wens naar werkelijkheid. Die weg wordt in dit boek beschreven.',
 				'coverpath' => '/bookcovers/de_creatiespiraal.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789080467712',
             ], [
 				'title'     => 'De impact van leren zichtbaar maken Nederlandse vertaling van Visible Learning',
 				'author'    => 'John Hattie',
@@ -112,7 +112,30 @@ In dit boek krijg je op zes domeinen verschillende bouwstenen die je kunnen help
 •	 vanuit de eigen onderwijscontext te kiezen voor wat het beste werkt.
 Dit boek bevat de meest actuele onderzoeksresultaten van \'Leren zichtbaar maken\'\'',
 				'coverpath' => '/bookcovers/de_impact_van_leren_zichtbaar_maken.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789462342392',
+            ],[
+                'title'     => 'De impact van leren zichtbaar maken Nederlandse vertaling van Visible Learning',
+                'author'    => 'John Hattie',
+                'content'   => 'De impact van Leren zichtbaar maken (Visible Learning) van John Hattie, bevat het resultaat van onderzoek waarbij miljoenen leraren en leerling betrokken waren en dat gebaseerd is op de synthese van meer dan 800 meta-analyses. 
+Deze synthese wordt ingezet om een leermodel dat het leren en het lesgeven zichtbaar maakt, vorm te geven. Het brengt leraargericht onderwijs en leerlinggericht leren samen door een antwoord te formuleren op de vragen:
+•	 Hoe maak je leren tot een expliciet en uitdagend doel?
+•	 Wat zijn de leerintenties en succescriteria? En kennen leraren en leerlingen die?
+•	 Weten leraren en leerlingen wanneer het doel bereikt is?
+•	Hoe kies je doelbewust activiteiten?
+•	 Hoe is het feedbackmodel van Hattie opgebouwd? 
+•	Hoe kun je het engagement van leraren en leerlingen verhogen om te komen tot leren?
+•	Hoe bouw je als leraar aan kennis bij je leerlingen? Van oppervlakkig tot grondige en conceptuele kennis?
+•	 Hoe creëer je als schoolleider een omgeving waar leraren kunnen praten over hun lesgeven?
+
+In dit boek krijg je op zes domeinen verschillende bouwstenen die je kunnen helpen om een antwoord te vinden op de vraag: Wat heeft al dan niet een positieve impact op de leerprestaties van mijn leerlingen?
+\'De impact van leren zichtbaar maken, zet leraren, schoolleiders en andere onderwijsbetrokkenen aan om
+•	stil te staan bij de eigen onderwijspraktijk; 
+•	doordachte keuzes te maken;
+•	de leerprestaties van elke leerling te verbeteren;
+•	 vanuit de eigen onderwijscontext te kiezen voor wat het beste werkt.
+Dit boek bevat de meest actuele onderzoeksresultaten van \'Leren zichtbaar maken\'\'',
+                'coverpath' => '/bookcovers/de_impact_van_leren_zichtbaar_maken.jpg',
+                'isbn'      => '9789462342392',
             ], [
 				'title'     => 'De kunst en wetenschap van het lesgeven',
 				'author'    => 'Robert J. Marzano',
@@ -131,7 +154,7 @@ In deze uitgave benadrukken we zowel de kunst als de wetenschap van het lesgeven
 9.	Hoe communiceer ik hoge verwachtingen voor alle leerlingen? 
 10.	Hoe ontwikkel ik goede lessen binnen een samenhangend geheel?',
 				'coverpath' => '/bookcovers/de_kunst_en_wetenschap_van_het_lesgeven.jpg',
-                'isbn'      => '',
+                'isbn'      => '9789461180223',
             ], [
 				'title'     => 'De leerafdeling: Een specifieke vorm van werkplekleren',
 				'author'    => 'Niek van den Berg, Ad de Jongh, Ad Klous en Jan Streumer',
@@ -140,7 +163,7 @@ In deze tweede brochure in de reeks \'\'Werkplekleren regio Rijnmond\'\'
 Zijn de resultaten van het onderzoek genomen.
 Aandacht wordt besteed aan de volgende Thema\'s. Argumenten voor en tegen de leerling, de vormgeving van de afdeling, de effecten van de leerafdeling en de vergelijking van de stage op de leerafdeling met de individuele stages.',
 				'coverpath' => '/bookcovers/de_leerafdeling.jpg',
-                'isbn'      => '',
+                'isbn'      => '000000',
             ], [
 				'title'     => 'De Regisseur Van je eigen leven',
 				'author'    => 'Abkader Chrifi',

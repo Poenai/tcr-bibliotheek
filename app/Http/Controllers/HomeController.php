@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Book;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
@@ -23,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$books = Book::all();
-
+    	$books = DB::table('books')->select('*')->distinct()->get();
+        dd($books);
         return view('home',compact('books'));
     }
 }
