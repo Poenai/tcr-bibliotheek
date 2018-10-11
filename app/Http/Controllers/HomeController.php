@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
     	$books = DB::table('books')->select('*')->distinct()->get();
-        dd($books);
+
         return view('home',compact('books'));
     }
 }
