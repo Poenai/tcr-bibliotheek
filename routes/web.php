@@ -1,8 +1,6 @@
 <?php
 // login routes
-Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('login', 'Auth\LoginController@login');
-Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+Auth::routes();
 
 // user needs to be logged in to access this
 Route::group(['middleware' => ['auth']], function () {
@@ -17,4 +15,5 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 // temp test pages
-Route::get('/userpage', 'UserController@index');
+Route::get('/userspage', 'UserController@index');
+Route::get('/userspage/create', 'UserController@create');
