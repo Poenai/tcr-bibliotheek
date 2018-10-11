@@ -46,10 +46,8 @@ class LoanController extends Controller
     {
 
         Loan::create($request->all());
-        $books = Book::all();
-        $users = User::all();
-        $loans = Loan::all();
-        return view('loans.index',compact('loans','users', 'books'));
+
+        return redirect('/loans');
     }
 
     /**
@@ -99,11 +97,8 @@ class LoanController extends Controller
     {
         $loanInfo = [];
         $loan->update($request->all());
-        $books = Book::all();
-        $users = User::all();
-        $loans = Loan::all();
 
-        return view('loans.index',compact('loans','users', 'books'));
+        return redirect('/loans');
     }
 
     /**
@@ -115,11 +110,10 @@ class LoanController extends Controller
     public function destroy(Loan $loan)
     {
         $loan->delete();
-        $books = Book::all();
-        $users = User::all();
-        $loans = Loan::all();
-        return view('loans.index',compact('loans','users', 'books'));
+
+        return redirect('/loans');
     }
+
     public function search()
     {
         $loans = Loan::crossjoin('books','loans.book_id','=','books.id')
