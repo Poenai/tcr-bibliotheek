@@ -8,7 +8,8 @@
                     <div class="card-header text-center">Login om een boek te kunnen lenen!</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}" class="col-lg-8 d-flex flex-column align-items-center mt-0 mb-0 mr-auto ml-auto">
+                        <form method="POST" action="{{ route('login') }}"
+                              class="col-lg-8 d-flex flex-column align-items-center mt-0 mb-0 mr-auto ml-auto">
                             @csrf
 
                             <input id="email" type="email"
@@ -35,6 +36,10 @@
                             @endif
 
                             <button type="submit" class="btn btn-primary mt-4">Login</button>
+
+                            <a href="/register">
+                                Maak een nieuw account
+                            </a>
                         </form>
                     </div>
                 </div>

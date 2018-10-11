@@ -57,7 +57,7 @@
             <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
                 @csrf
                 {{method_field('DELETE')}}
-                <input type="submit" class="btn btn-secondary float-left" value="delete">
+                <input type="submit" class="btn btn-secondary float-left mr-3" value="delete">
             </form>
             <form action="{{URL::asset('/loans'). '/create'}}" method="get">
                 @csrf
