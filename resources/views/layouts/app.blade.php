@@ -19,7 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="css/layout.css?v=1" rel="stylesheet">
+    <link href="/css/layout.css?v=1" rel="stylesheet">
 </head>
 <body>
 <div id="app">
