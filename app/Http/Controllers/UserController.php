@@ -25,7 +25,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        //$user = User::where('id', $_GET['user_id'])->first(); <--
+
+        return view('usersPage.update');
     }
 
     /**
@@ -36,7 +38,9 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        User::create($request->all());
+
+        return redirect('/userspage');
     }
 
     /**
@@ -58,7 +62,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        //$user = User::where('id', $_GET['user_id'])->first();
     }
 
     /**
