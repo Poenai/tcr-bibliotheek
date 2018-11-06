@@ -1,11 +1,5 @@
 @extends('layouts.app')
-@section('search')
-    <form action="{{URL::asset('loans'). "/search"}}" method="post">
-        {{csrf_field()}}
-        <input type="text" name="search" placeholder="zoek lening">
-        <input type="submit" name="submit">
-    </form>
-@endsection
+
 @section('content')
     <form action="{{URL::asset('/loans'). '/'.$loan->id}} " method="post">
         {{ csrf_field() }}
