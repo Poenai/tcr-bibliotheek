@@ -41,7 +41,7 @@
             @else
                 <div class="col-12">
                     <h1 class="text-center mt-5">Geen boeken
-                        gevonden"<?php if(isset($searchQuery)): ?> onder {{$searchQuery}}<?php endif; ?>"</h1>
+                        gevonden<?php if(isset($searchQuery)): ?> onder "{{$searchQuery}}"<?php endif; ?></h1>
                 </div>
             @endif
         </div>
