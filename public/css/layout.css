@@ -30,6 +30,30 @@ ul.blocks li {
     display: block;
 }
 
+.navbar-brand, .nav-item > #navbarDropdown {
+    color: #e9eaeb !important;
+    font-weight: bold;
+}
+
+.searchform > input {
+    border: 0;
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.searchform > input[type="text"]{
+    background-color: #48b59a;
+    color: #e9eaeb;
+}
+
+.searchform > input[type="text"]::placeholder{
+    color: #e9eaeb99;
+}
+
+.searchform > input[type="submit"]{
+    cursor: pointer;
+}
+
 /* blocks css from educus */
 
 ul.blocks {

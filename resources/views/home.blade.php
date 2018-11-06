@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('search')
-    <form action="{{URL::asset('books'). "/search"}}" method="post">
+    <form action="{{URL::asset('books'). "/search"}}" method="post" class="searchform">
         {{csrf_field()}}
         <input type="text" name="search" placeholder="boek titel">
-        <input type="submit" name="submit">
+        <input type="submit" name="submit" value="Search">
     </form>
 @endsection
 @section('content')
