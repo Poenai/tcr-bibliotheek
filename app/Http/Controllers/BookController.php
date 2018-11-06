@@ -128,13 +128,13 @@ class BookController extends Controller
 		return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
 	}
 
-//	public function upload()
-//	{
-//
-//    echo('nee...');
-//    }
+	//	public function upload()
+	//	{
+	//
+	//    echo('nee...');
+	//    }
 
-//    public function search()
+	//    public function search()
 	////    {
 	////        $books = Book::orderBy('name')->get();
 	////        return view('book.search')->with('book', $books);
@@ -158,20 +158,22 @@ class BookController extends Controller
 	////                                    data-original-title="' . $book->name . '"><a href"'.route('book.show', ['id' => $book->id]).'"><img src="' . url($book->poster) . '"alt="' . $book->name . '"
 	////                                    style="width:100%"/></a></div></div>';
 	////            }
-//            return Response($results);
-//        }
-//    }
-    public function search(){
+	//            return Response($results);
+	//        }
+	//    }
+	public function search()
+	{
 
-	    $books = Book::where('title', 'LIKE', '%' . $_POST['search'] . '%')
-            ->orWhere('content', 'LIKE', '%' . $_POST['search'] . '%')
-            ->orWhere('isbn', 'LIKE', '%' . $_POST['search'] . '%')
-            ->orWhere('author', 'LIKE', '%' . $_POST['search'] . '%')
-            ->get();
-//	    $books = Book::where('title', 'LIKE', '%' . $_POST['search'] . '%')
-//            ->get();
+		$searchQuery = $_POST['search'];
+
+		$books = Book::where('title', 'LIKE', "%{$searchQuery}%")
+		             ->orWhere('content', 'LIKE', "%{$searchQuery}%")
+		             ->orWhere('isbn', 'LIKE', "%{$searchQuery}%")
+		             ->orWhere('author', 'LIKE', "%{$searchQuery}%")
+		             ->get()
+		;
 
 
-        return view('home',compact('books'));
-    }
+		return view('home', compact('books', 'searchQuery'));
+	}
 }

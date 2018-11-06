@@ -40,7 +40,8 @@
                 @endforeach
             @else
                 <div class="col-12">
-                    <h1 class="text-center mt-5">Geen boeken gevonden</h1>
+                    <h1 class="text-center mt-5">Geen boeken
+                        gevonden onder "<?php if(isset($searchQuery)): ?>{{$searchQuery}}<?php endif; ?>"</h1>
                 </div>
             @endif
         </div>
