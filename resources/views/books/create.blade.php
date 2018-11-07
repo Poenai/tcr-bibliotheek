@@ -7,11 +7,11 @@
         <div class="formcontainer">
             <label for="image">Voeg een cover foto toe:</label>
             <input type="file" name="image" id="image">
-            <input type="text" id="title" name="title" placeholder="titel" required>
-            <input type="text" id="author" name="author" placeholder="schrijver" required>
-            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer">
+            <input type="text" id="title" name="title" placeholder="titel" required class="form-control">
+            <input type="text" id="author" name="author" placeholder="schrijver" required class="form-control">
+            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer" class="form-control">
             <label for="content">Korte beschrijving:</label>
-            <textarea id="content" cols="70" rows="15" name="content" required></textarea>
+            <textarea id="content" cols="70" rows="15" name="content" required class="form-control"></textarea>
             <input type="submit" class="btn" value="Opslaan">
         </div>
     </form>
