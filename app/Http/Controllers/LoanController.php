@@ -71,7 +71,7 @@ class LoanController extends Controller
 
         Loan::create($request->all());
 
-        return redirect('/loans');
+        return redirect('/');
     }
 
     /**
