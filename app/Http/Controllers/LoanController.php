@@ -23,7 +23,7 @@ class LoanController extends Controller
 
         foreach ($loansRes as $loanRes) {
 
-            $query = Book::select('title','isbn')->where('id', '=', $loanRes->book_id)->get()[0];
+            $query = Book::select('title', 'isbn')->where('id', '=', $loanRes->book_id)->get()[0];
             $query2 = User::select('name')->where('id', '=', $loanRes->user_id)->get()[0];
 
             $loans[] = [
@@ -50,7 +50,7 @@ class LoanController extends Controller
     {
         $book = Book::findOrFail($_GET['book_id']);
 
-        return view('loans.create', compact( 'book'));
+        return view('loans.create', compact('book'));
     }
 
     /**
@@ -61,6 +61,13 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
+        if (strtotime($request->loan_date) > strtotime($request->return_date)) {
+            return back()->withErrors(['de datum van uitgifte was later dan de terugname datum']);
+        }
+
+        if ((strtotime($request->return_date) - strtotime($request->loan_date)) > 15768000) {
+            return back()->withErrors(['je kan een boek niet langer lenen dan een half jaar']);
+        }
 
         Loan::create($request->all());
 

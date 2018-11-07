@@ -4,6 +4,11 @@
 @section('content')
     <form action="{{URL::asset('/loans')}} " method="post">
         <div class="formcontainer">
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <b>Sorry, {{$errors->first()}}</b>
+                </div>
+            @endif
             {{ csrf_field() }}
             <h4>Wanneer wil je <b>"{{$book->title}}"</b> lenen?</h4>
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
