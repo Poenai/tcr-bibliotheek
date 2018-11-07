@@ -17,18 +17,23 @@
                     <th scope="col" width="250">Geleend aan</th>
                     <th scope="col" width="100">Geleent op</th>
                     <th scope="col" width="100">Moet terug komen op</th>
-                    <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
+
                 @foreach ($loans as $loan)
                     <tr>
                         <td>{{$loan['isbn']}}</td>
-                        <td><a href="/books/{{$loan['book_id']}}">{{$loan['bookName']}}</a></td>
+                        <td>
+                            <a href="/books/{{$loan['book_id']}}">{{$loan['bookName']}}<?php if (isset($loan['title'])) echo $loan['title'] ?></a>
+                        </td>
                         <td>{{$loan['name']}}</td>
                         <td>{{$loan['loan_date']}}</td>
                         <td>{{$loan['return_date']}}</td>
+
+                        <?php if(!isset($loan['content'])): ?>
                         <td><a href="/loans/{{$loan['id']}}/edit">bewerken</a></td>
+                        <?php endif; ?>
                     </tr>
                 @endforeach
                 </tbody>
