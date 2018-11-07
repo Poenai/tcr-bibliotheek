@@ -14,21 +14,21 @@
                 <tr>
                     <th scope="col">ISBN nummer</th>
                     <th scope="col">Boek</th>
-                    <th scope="col">Geleend aan</th>
-                    <th scope="col">Geleent op</th>
-                    <th scope="col">Komt terug op</th>
+                    <th scope="col" width="250">Geleend aan</th>
+                    <th scope="col" width="100">Geleent op</th>
+                    <th scope="col" width="100">Moet terug komen op</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach ($loans as $loan)
                     <tr>
-                        <td>{{$loan->isbn}}</td>
-                        <td><a href="/books/{{$loan->id}}">{{$loan->title}}</a></td>
-                        <td>{{$loan->name}}</td>
-                        <td>{{$loan->loan_date}}</td>
-                        <td>{{$loan->return_date}}</td>
-                        <td><a href="/loans/{{$loan->id}}/edit">bewerken</a></td>
+                        <td>{{$loan['isbn']}}</td>
+                        <td><a href="/books/{{$loan['book_id']}}">{{$loan['bookName']}}</a></td>
+                        <td>{{$loan['name']}}</td>
+                        <td>{{$loan['loan_date']}}</td>
+                        <td>{{$loan['return_date']}}</td>
+                        <td><a href="/loans/{{$loan['id']}}/edit">bewerken</a></td>
                     </tr>
                 @endforeach
                 </tbody>
