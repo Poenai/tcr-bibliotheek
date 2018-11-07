@@ -38,6 +38,7 @@
 					?>
                     <h1 class="mt-4">{{$title}}</h1>
                     <h4>geschreven door {{$author}}</h4>
+                    <b>aantal exemplaren: {{$book->amount}}</b>
                 </div>
             </div>
         </div>
