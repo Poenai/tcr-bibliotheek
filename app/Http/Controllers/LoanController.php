@@ -50,7 +50,8 @@ class LoanController extends Controller
     {
         $book = Book::findOrFail($_GET['book_id']);
 
-        return view('loans.create', compact('book'));
+        $users = User::all();
+        return view('loans.create', compact('book','users'));
     }
 
     /**
