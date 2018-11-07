@@ -1,18 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="{{URL::asset('books')}}" method="post" enctype="multipart/form-data">
+    <form action="{{URL::asset('books')}}" method="post" enctype="multipart/form-data" class="bookform">
         {{ csrf_field() }}
 
-        <input type="file" name="image" id="image">
-
-        <label for="title">titel:</label>
-        <input type="text" id="title" name="title" placeholder="titel">
-        <label for="content">inhoud:</label>
-        <input type="text" id="content" name="content" placeholder="inhoud">
-        <label for="author">schrijver:</label>
-        <input type="text" id="author" name="author" placeholder="schrijver">
-        <input type="submit">
+        <div class="formcontainer">
+            <label for="image">Voeg een cover foto toe:</label>
+            <input type="file" name="image" id="image">
+            <input type="text" id="title" name="title" placeholder="titel">
+            <input type="text" id="author" name="author" placeholder="schrijver">
+            <label for="content">Korte beschrijving:</label>
+            <textarea id="content" cols="70" rows="15" name="content"></textarea>
+            <input type="submit" class="btn" value="Opslaan">
+        </div>
     </form>
-
 @endsection
