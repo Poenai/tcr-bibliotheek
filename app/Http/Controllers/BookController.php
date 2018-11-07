@@ -52,6 +52,7 @@ class BookController extends Controller
 		}
 		$book->title   = $request->title;
 		$book->author  = $request->author;
+		$book->isbn  = $request->isbn;
 		$book->content = $request->content;
 		$book->save();
 
@@ -105,7 +106,6 @@ class BookController extends Controller
 			$request->file('image')->move(public_path('bookcovers'), $uniqueFileName);
 			$book->coverpath = '/bookcovers/' . $uniqueFileName;
 		}
-
 
 		$book->update($request->all());
 		return redirect(URL::asset('/books') . '/' . $book->id);

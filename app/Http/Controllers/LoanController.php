@@ -48,9 +48,9 @@ class LoanController extends Controller
      */
     public function create()
     {
-        $book = $_GET['book_id'];
-        $loans = Loan::all();
-        return view('loans.create', compact('loans', 'book'));
+        $book = Book::findOrFail($_GET['book_id']);
+
+        return view('loans.create', compact( 'book'));
     }
 
     /**
