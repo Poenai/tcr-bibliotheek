@@ -19,11 +19,11 @@ class UserSeeder extends Seeder
             'isAdmin' => true,
         ]);
         DB::table('users')->insert([
-        'name' => 'Henk Shipswrak',
-        'email' => 'h.schipswrak@tcrmbo.nl',
-        'password' => Hash::make('password'),
-        'isAdmin' => false,
+            'name' => 'testuser',
+            'email' => 'test@tcrmbo.nl',
+            'password' => Hash::make('123'),
+            'isAdmin' => false,
         ]);
-        factory(App\User::class,30)->create();
+        factory(App\User::class, 30)->create();
     }
 }
