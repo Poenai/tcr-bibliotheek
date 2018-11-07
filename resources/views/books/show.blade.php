@@ -54,12 +54,11 @@
                 {{method_field('DELETE')}}
                 <input type="submit" class="btn btn-secondary float-left mr-3" value="delete">
             </form>
-            <form action="{{URL::asset('/loans'). '/create'}}" method="get">
-                @csrf
-                <input type="hidden" value="{{$book->id}}" name="book_id">
-                <input type="submit" class="btn btn-secondary float-left" value="bestel">
-            </form>
-
         @endif
+        <form action="{{URL::asset('/loans'). '/create'}}" method="get">
+            @csrf
+            <input type="hidden" value="{{$book->id}}" name="book_id">
+            <input type="submit" class="btn btn-secondary float-left" value="bestel">
+        </form>
     </div>
 @endsection
