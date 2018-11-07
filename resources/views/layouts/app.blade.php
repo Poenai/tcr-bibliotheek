@@ -41,7 +41,7 @@
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                    @yield('search')
+                @yield('search')
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
@@ -56,17 +56,12 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                                 @if(Auth::user()->isAdmin())
-                                    <a class="dropdown-item" href="/loans">Books loans</a>
+                                    <a class="dropdown-item" href="/loans">Uitgeleende boeken</a>
                                     <a class="dropdown-item" href="/books/create">Boek toevoegen</a>
-                                    <a class="dropdown-item" href="mailto:?subject=tcr-bibliotheek-aanmelding&body=Beste , U bent uitgenodigd om deel te nemen aan de TCR bibliotheek">SendMail</a>
                                 @endif
-                                <a class="dropdown-item" href="{{ route('books.index') }}">
-                                    Books
-                                </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                                   onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    Uitloggen
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST"
@@ -82,11 +77,44 @@
     </nav>
 
     <ul class="blocks" style="position:absolute;">
-        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
-        <li></li><li></li><li></li><li></li><li></li><li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
     </ul>
 
     <main class="py-4" style="position:relative;">
