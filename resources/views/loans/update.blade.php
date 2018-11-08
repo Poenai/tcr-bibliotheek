@@ -17,7 +17,7 @@
             <select id="user" name="user_id" class="form-control" required>
                 <option value="{{$loanInfo[0]}}">{{$loanInfo[4]}}</option>
                 @foreach($users as $user)
-                    <option value={{$user->id}}>{{$user->name}}</option>
+                    <option value={{$user->id}}>{{$user->name}} ({{$user->email}})</option>
                 @endforeach
             </select>
             <label for="loanDate">datum van uitgifte:</label>

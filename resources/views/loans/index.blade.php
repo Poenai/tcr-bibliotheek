@@ -27,7 +27,7 @@
                         <td>
                             <a href="/books/{{$loan['book_id']}}">{{$loan['bookName']}}<?php if (isset($loan['title'])) echo $loan['title'] ?></a>
                         </td>
-                        <td>{{$loan['name']}}</td>
+                        <td>{{$loan['name']}}<br>{{$loan['email']}}</td>
                         <td>{{$loan['loan_date']}}</td>
                         <td>{{$loan['return_date']}}</td>
 

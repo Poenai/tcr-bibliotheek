@@ -16,7 +16,7 @@
                 <label for="user_id">lener:</label>
                 <select name="user_id" id="user_id" class="form-control">
                     @foreach($users as $user)
-                        <option value="{{$user->id}}">{{$user->name}}</option>
+                        <option value="{{$user->id}}">{{$user->name}} ({{$user->email}})</option>
                     @endforeach
                 </select>
             @else

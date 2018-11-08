@@ -24,7 +24,7 @@ class LoanController extends Controller
         foreach ($loansRes as $loanRes) {
 
             $query = Book::select('title', 'isbn')->where('id', '=', $loanRes->book_id)->get()[0];
-            $query2 = User::select('name')->where('id', '=', $loanRes->user_id)->get()[0];
+            $query2 = User::select('name','email')->where('id', '=', $loanRes->user_id)->get()[0];
 
             $loans[] = [
                 'id' => $loanRes->id,
@@ -34,6 +34,7 @@ class LoanController extends Controller
                 'return_date' => $loanRes->return_date,
                 'bookName' => $query->title,
                 'name' => $query2->name,
+                'email' => $query2->email,
             ];
         }
 
@@ -73,17 +74,6 @@ class LoanController extends Controller
         Loan::create($request->all());
 
         return redirect('/')->with('status', 'Je lening is opgeslaan!');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Loan $loan
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Loan $loan)
-    {
-        return view('loans.show', compact('loan'));
     }
 
     /**
