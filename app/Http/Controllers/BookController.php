@@ -109,7 +109,7 @@ class BookController extends Controller
         }
 
         $book->update($request->all());
-        return redirect(URL::asset('/books') . '/' . $book->id);
+        return redirect(URL::asset('/books') . '/' . $book->id)->with('status', 'Boek is aangepast!');
     }
 
     /**

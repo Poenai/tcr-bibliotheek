@@ -72,7 +72,7 @@ class LoanController extends Controller
 
         Loan::create($request->all());
 
-        return redirect('/');
+        return redirect('/')->with('status', 'Je lening is opgeslaan!');
     }
 
     /**
