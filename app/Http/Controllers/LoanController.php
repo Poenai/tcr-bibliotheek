@@ -70,9 +70,13 @@ class LoanController extends Controller
             return back()->withErrors(['je kan een boek niet langer lenen dan een half jaar']);
         }
 
+        if (strtotime($request->loan_date) < time()-86400) {
+            return back()->withErrors(['de datum van de uitgifte was eerder dan vandaag']);
+        }
+
         Loan::create($request->all());
 
-        return redirect('/')->with('status', 'Je lening is opgeslaan!');
+        return redirect('/')->with('status', 'Je lening is opgeslagen!');
     }
 
     /**
