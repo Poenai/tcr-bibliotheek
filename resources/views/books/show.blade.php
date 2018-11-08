@@ -47,12 +47,12 @@
         </div>
         @if(Auth::user()->isAdmin)
             <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">
-                <button type="button" class="btn btn-secondary float-left mr-3">edit</button>
+                <button type="button" class="btn btn-secondary float-left mr-3">bewerken</button>
             </a>
             <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
                 @csrf
                 {{method_field('DELETE')}}
-                <input type="submit" class="btn btn-secondary float-left mr-3" value="delete">
+                <input type="submit" class="btn btn-secondary float-left mr-3" value="eén exemplaar verijderen">
             </form>
         @endif
         <form action="{{URL::asset('/loans'). '/create'}}" method="get">
