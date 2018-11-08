@@ -54,6 +54,7 @@ class BookController extends Controller
         $book->author = $request->author;
         $book->isbn = $request->isbn;
         $book->content = $request->content;
+        $book->amount = $request->amount;
         $book->save();
 
 
