@@ -100,7 +100,7 @@ class BookController extends Controller
     {
         if ($request->image != null) {
             if ($book->coverpath != "/bookcovers/_book-cover-placeholder.png") {
-                unlink(public_path() . $book->coverpath);
+                @unlink(public_path() . $book->coverpath);
             }
             $fileExtension = $request->file('image')->getClientOriginalExtension();
             $uniqueFileName = $request->title . uniqid() . '.' . $fileExtension;
@@ -125,7 +125,7 @@ class BookController extends Controller
             if ($book->coverpath == '/bookcovers/_book-cover-placeholder.png' OR $book->coverpath == '') {
 
             } else {
-                unlink(public_path() . $book->coverpath);
+                @unlink(public_path() . $book->coverpath);
             }
 
             $book->delete();
