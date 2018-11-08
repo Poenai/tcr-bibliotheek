@@ -29,7 +29,7 @@
                         </td>
                         <td>{{$loan['name']}}<br>{{$loan['email']}}</td>
                         <td>{{$loan['loan_date']}}</td>
-                        <td>{{$loan['return_date']}}</td>
+                        <td <?php if(strtotime($loan['return_date']) < time()) echo 'class="table-danger"'?>>{{$loan['return_date']}}</td>
 
                         <?php if(!isset($loan['content'])): ?>
                         <td><a href="/loans/{{$loan['id']}}/edit">bewerken</a></td>

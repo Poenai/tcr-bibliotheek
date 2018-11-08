@@ -17,14 +17,14 @@ class LoanController extends Controller
      */
     public function index()
     {
-        $loansRes = Loan::all();
+        $loansRes = Loan::orderBy('return_date', 'asc')->get();
 
         $loans = [];
 
         foreach ($loansRes as $loanRes) {
 
             $query = Book::select('title', 'isbn')->where('id', '=', $loanRes->book_id)->get()[0];
-            $query2 = User::select('name','email')->where('id', '=', $loanRes->user_id)->get()[0];
+            $query2 = User::select('name', 'email')->where('id', '=', $loanRes->user_id)->get()[0];
 
             $loans[] = [
                 'id' => $loanRes->id,
@@ -37,7 +37,6 @@ class LoanController extends Controller
                 'email' => $query2->email,
             ];
         }
-
 
         return view('loans.index', compact('loans'));
     }
@@ -52,7 +51,7 @@ class LoanController extends Controller
         $book = Book::findOrFail($_GET['book_id']);
 
         $users = User::all();
-        return view('loans.create', compact('book','users'));
+        return view('loans.create', compact('book', 'users'));
     }
 
     /**
