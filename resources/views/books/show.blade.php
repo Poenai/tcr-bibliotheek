@@ -2,9 +2,13 @@
 
 @section('content')
 
-
     <div class="container">
         <div class="row justify-content-center mt-3 mb-5">
+            @if (Session::has('status'))
+                <div class="alert alert-dismissible alert-success col-12">
+                    <b>{{Session::get('status')}}</b>
+                </div>
+            @endif
             <div class="col-12 col-md-6 row justify-content-center center">
                 <div class="col-6">
 					<?php

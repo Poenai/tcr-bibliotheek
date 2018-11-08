@@ -10,7 +10,7 @@
             <input type="file" name="image" id="image">
             <input type="text" id="title" name="title" placeholder="titel" value="{{$book->title}}" required class="form-control">
             <input type="text" id="author" name="author" placeholder="schrijver" value="{{$book->author}}" required class="form-control">
-            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer" value="{{$book->isbn}}" class="form-control">
+            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer" value="{{$book->isbn}}" required class="form-control">
             <label for="amount">Aantal exemplaren:</label>
             <input type="number" id="amount" name="amount" value="{{$book->amount}}" class="form-control" required>
             <label for="content">Korte beschrijving:</label>

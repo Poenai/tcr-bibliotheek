@@ -9,7 +9,7 @@
             <input type="file" name="image" id="image">
             <input type="text" id="title" name="title" placeholder="titel" required class="form-control">
             <input type="text" id="author" name="author" placeholder="schrijver" required class="form-control">
-            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer" class="form-control">
+            <input type="text" id="isbn" name="isbn" placeholder="ISBN nummer" required class="form-control">
             <label for="amount">Aantal exemplaren:</label>
             <input type="number" id="amount" name="amount" value="1" class="form-control" required>
             <label for="content">Korte beschrijving:</label>

@@ -121,15 +121,22 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+        if ($book->amount == 1) {
+            if ($book->coverpath == '/bookcovers/_book-cover-placeholder.png' OR $book->coverpath == '') {
 
-        if ($book->coverpath == '/bookcovers/_book-cover-placeholder.png' OR $book->coverpath == '') {
+            } else {
+                unlink(public_path() . $book->coverpath);
+            }
 
+            $book->delete();
+            return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
         } else {
-            unlink(public_path() . $book->coverpath);
+            $book->amount--;
+            $book->save();
+            return redirect("/books/{$book->id}")->with('status', 'eén exemplaar verwijderd');
         }
 
-        $book->delete();
-        return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
+
     }
 
     //	public function upload()
