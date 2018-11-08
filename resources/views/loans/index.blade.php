@@ -3,7 +3,7 @@
     <form action="{{URL::asset('loans'). "/search"}}" method="post" class="searchform">
         {{csrf_field()}}
         <input type="text" name="search" placeholder="zoek lening">
-        <input type="submit" name="submit">
+        <input type="submit" name="submit" value="Search">
     </form>
 @endsection
 @section('content')
