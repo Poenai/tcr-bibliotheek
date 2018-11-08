@@ -29,4 +29,12 @@
 
     </form>
 
+    <form action="{{URL::asset('/loans'). '/'.$loan->id}}" method="post">
+        <div class="formcontainer">
+            @csrf
+            {{method_field('DELETE')}}
+            <input type="submit" class="btn btn-secondary" value="boek is ingeleverd; verwijder deze lening">
+        </div>
+    </form>
+
 @endsection
