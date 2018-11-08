@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Loan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 
@@ -128,7 +129,9 @@ class BookController extends Controller
                 @unlink(public_path() . $book->coverpath);
             }
 
+            Loan::where('book_id', $book->id)->delete();
             $book->delete();
+
             return redirect()->action('HomeController@index')->with('status', 'boek verwijderd');
         } else {
             $book->amount--;
