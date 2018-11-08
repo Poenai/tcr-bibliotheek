@@ -9,29 +9,34 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
+            @if (Session::has('status'))
+                <div class="alert alert-dismissible alert-success col-12">
+                    <b>{{Session::get('status')}}</b>
+                </div>
+            @endif
             @if(count($books) > 0)
                 @foreach ($books as $book)
                     <div class="col-12 col-md-6 col-xl-4">
                         <a href="/books/{{$book->id}}">
                             <div class="card mb-5 mr-2 ml-2">
-								<?php
-								if ($book->coverpath) {
-									$cover = $book->coverpath;
-								}else {
-									$cover = '/bookcovers/_book-cover-placeholder.png';
-								}
-								?>
+                                <?php
+                                if ($book->coverpath) {
+                                    $cover = $book->coverpath;
+                                } else {
+                                    $cover = '/bookcovers/_book-cover-placeholder.png';
+                                }
+                                ?>
                                 <div class="bookimage"
                                      style="background-image: url('{{$cover}}')"></div>
                                 <div class="card-footer text-muted">
-									<?php
+                                    <?php
 
-									if ($book->title) {
-										$title = $book->title;
-									}else {
-										$title = 'untitled book';
-									}
-									?>
+                                    if ($book->title) {
+                                        $title = $book->title;
+                                    } else {
+                                        $title = 'untitled book';
+                                    }
+                                    ?>
                                     <h3 class="text-center">{{$title}}</h3>
                                 </div>
                             </div>
