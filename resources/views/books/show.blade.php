@@ -49,20 +49,22 @@
         <div class="row justify-content-center">
             <p style="white-space: pre-wrap">{{$book->content}}</p>
         </div>
-        @if(Auth::user()->isAdmin)
-            <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">
-                <button type="button" class="btn btn-secondary float-left mr-3">bewerken</button>
-            </a>
-            <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
+        <div class="mb-5">
+            @if(Auth::user()->isAdmin)
+                <a href="{{URL::asset('/books'). '/'.$book->id . '/edit'}}">
+                    <button type="button" class="btn btn-secondary float-left mr-3">bewerken</button>
+                </a>
+                <form action="{{URL::asset('/books'). '/'.$book->id}}" method="post">
+                    @csrf
+                    {{method_field('DELETE')}}
+                    <input type="submit" class="btn btn-secondary float-left mr-3" value="eén exemplaar verijderen">
+                </form>
+            @endif
+            <form action="{{URL::asset('/loans'). '/create'}}" method="get">
                 @csrf
-                {{method_field('DELETE')}}
-                <input type="submit" class="btn btn-secondary float-left mr-3" value="eén exemplaar verijderen">
+                <input type="hidden" value="{{$book->id}}" name="book_id">
+                <input type="submit" class="btn btn-secondary float-left" value="bestel">
             </form>
-        @endif
-        <form action="{{URL::asset('/loans'). '/create'}}" method="get">
-            @csrf
-            <input type="hidden" value="{{$book->id}}" name="book_id">
-            <input type="submit" class="btn btn-secondary float-left" value="bestel">
-        </form>
+        </div>
     </div>
 @endsection
